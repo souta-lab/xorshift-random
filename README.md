@@ -1,27 +1,31 @@
-# mersenne-random
+# xorshift-random
 
-Mersenne Twister–based fast pseudo-random number generator for JavaScript.
+Xorshift-based fast pseudo-random number generator for JavaScript.
 
-> **Note:** This is a non-cryptographic PRNG. Do not use it where cryptographic security is required — use `crypto.getRandomValues()` instead.
+> **Note:** Non-cryptographic PRNG. For cryptographic use, use `crypto.getRandomValues()` instead.
 
 ## Usage
 
 ```html
-<script src="MersenneRandom.js"></script>
+<script src="xorshift-random.js"></script>
 <script>
-  console.log(MersenneRandom());       // 0 <= x < 1
-  console.log(MersenneRandom(12345));  // seeded
+  console.log(XorshiftRandom());       // 0 <= x < 1
+  console.log(XorshiftRandom(12345));  // seeded
 </script>
 ```
 
 ```js
-import { MersenneRandom } from "./MersenneRandom.js";
-MersenneRandom(42);
+import { XorshiftRandom } from "./xorshift-random.js";
+XorshiftRandom(42);
 ```
 
 ## API
 
-- `MersenneRandom(seed?)` — returns a float in `[0, 1)`. Optional integer seed for reproducibility.
+- `XorshiftRandom(seed?)` — returns a float in `[0, 1)`. Optional integer seed.
+
+## How it works
+
+Uses Xorshift (x ^= x << 7; x ^= x >>> 9) with a 4-state stir loop. Fast and lightweight, not cryptographically secure.
 
 ## References
 

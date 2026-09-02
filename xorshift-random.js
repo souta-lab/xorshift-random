@@ -5,13 +5,13 @@ const MaxInt64 = Number.MAX_SAFE_INTEGER;
 function min(a,b){return a<b?a:b};
 function Xorshift(){seed^=seed<<7;seed^=seed>>>9;return min(1,Math.abs(seed)/2E9)};
 
-// メルセンヌ・ツイスタのアルゴリズム
+// Xorshiftのアルゴリズム
 function next(x, a, c, m) {
   return (x * a + c) % m;
 }
 
 // 乱数生成関数
-function MersenneRandom(seed) {
+function XorshiftRandom(seed) {
   // シード値の生成
   var x = seed || (Xorshift() * MaxInt64);
   var s0 = Xorshift() * MaxInt64;
