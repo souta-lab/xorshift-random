@@ -1,0 +1,21 @@
+{
+  "name": "xorshift-random",
+  "version": "1.0.0",
+  "description": "Xorshift-based fast pseudo-random number generator for JavaScript (non-cryptographic)",
+  "main": "xorshift-random.js",
+  "exports": {
+    ".": "./xorshift-random.js",
+    "./esm": "./xorshift-random.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/xorshift-random.test.js"
+  },
+  "keywords": [
+    "random",
+    "prng",
+    "xorshift"
+  ],
+  "author": "souta-lab",
+  "license": "MIT",
+  "type": "commonjs"
+}

@@ -4,19 +4,38 @@ Xorshift-based fast pseudo-random number generator for JavaScript.
 
 > **Note:** Non-cryptographic PRNG. For cryptographic use, use `crypto.getRandomValues()` instead.
 
+## Install
+
+```sh
+npm install xorshift-random
+```
+
+(or copy the single file `xorshift-random.js` — zero dependencies).
+
 ## Usage
 
 ```html
 <script src="xorshift-random.js"></script>
 <script>
   console.log(XorshiftRandom());       // 0 <= x < 1
-  console.log(XorshiftRandom(12345));  // seeded
+  console.log(XorshiftRandom(12345));  // seeded (deterministic)
 </script>
 ```
 
 ```js
-import { XorshiftRandom } from "./xorshift-random.js";
+// ESM
+import { XorshiftRandom } from "xorshift-random/xorshift-random.mjs";
+
+// CommonJS
+const { XorshiftRandom } = require("xorshift-random");
+
 XorshiftRandom(42);
+```
+
+## Test
+
+```sh
+npm test
 ```
 
 ## API
