@@ -6,11 +6,21 @@ Xorshift-based fast pseudo-random number generator for JavaScript.
 
 ## Install
 
+This package is not published on npm. Use one of the following instead:
+
 ```sh
-npm install xorshift-random
+# Copy the single file (zero dependencies)
+curl -O https://raw.githubusercontent.com/souta-lab/xorshift-random/main/xorshift-random.js
+
+# ...or clone the repo
+git clone https://github.com/souta-lab/xorshift-random.git
 ```
 
-(or copy the single file `xorshift-random.js` — zero dependencies).
+Then run the test suite locally:
+
+```sh
+npm test
+```
 
 ## Usage
 
@@ -23,11 +33,11 @@ npm install xorshift-random
 ```
 
 ```js
-// ESM
-import { XorshiftRandom } from "xorshift-random/xorshift-random.mjs";
+// ESM (local file)
+import { XorshiftRandom } from "./xorshift-random.mjs";
 
-// CommonJS
-const { XorshiftRandom } = require("xorshift-random");
+// CommonJS (local file)
+const { XorshiftRandom } = require("./xorshift-random.js");
 
 XorshiftRandom(42);
 ```
